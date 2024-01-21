@@ -15,8 +15,7 @@ import {
     Paper,
 } from '@mui/material';
 
-// import Logo from '../../Assests/OctathornLogo.png';
-// import CustomeButton from '../UI/Buttons/RounedButton';
+
 import MenuIcon from '@mui/icons-material/Menu';
 import ClosIcon from '@mui/icons-material/Close';
 // pl={{xl:'30%',lg:'25%',md:'10%'}}
