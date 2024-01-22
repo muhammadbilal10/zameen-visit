@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -6,90 +6,228 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs"
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-export function PropertiesCard() {
+import { cn } from "@/lib/utils";
+import { Home } from "lucide-react";
+
+interface PropertiesCardProps {
+  title: string;
+  icon: React.ReactNode;
+}
+
+export function PropertiesCard({ title, icon }: PropertiesCardProps) {
+  const popular = [
+    {
+      title: "250 sqr yard",
+      description: "Marlas",
+    },
+    {
+      title: "500 sqr yard",
+      description: "Marlas",
+    },
+    {
+      title: "1000 sqr yard",
+      description: "Marlas",
+    },
+    {
+      title: "250 sqr yard",
+      description: "Marlas",
+    },
+    {
+      title: "500 sqr yard",
+      description: "Marlas",
+    },
+    {
+      title: "1000 sqr yard",
+      description: "Marlas",
+    },
+  ];
+  const type = [
+    {
+      title: "250 sqr yard",
+      description: "Marlas",
+    },
+    {
+      title: "500 sqr yard",
+      description: "Marlas",
+    },
+    {
+      title: "1000 sqr yard",
+      description: "Marlas",
+    },
+    {
+      title: "250 sqr yard",
+      description: "Marlas",
+    },
+    {
+      title: "500 sqr yard",
+      description: "Marlas",
+    },
+    {
+      title: "1000 sqr yard",
+      description: "Marlas",
+    },
+  ];
+  const AreaSize = [
+    {
+      title: "250 sqr yard",
+      description: "Marlas",
+    },
+    {
+      title: "500 sqr yard",
+      description: "Marlas",
+    },
+    {
+      title: "1000 sqr yard",
+      description: "Marlas",
+    },
+    {
+      title: "250 sqr yard",
+      description: "Marlas",
+    },
+    {
+      title: "500 sqr yard",
+      description: "Marlas",
+    },
+    {
+      title: "1000 sqr yard",
+      description: "Marlas",
+    },
+  ];
+
   return (
-    <Tabs defaultValue="popular" className="w-[400px]">
-      <TabsList className="grid w-full grid-cols-3">
-        <TabsTrigger value="popular">Popular</TabsTrigger>
-        <TabsTrigger value="type">Type</TabsTrigger>
-        <TabsTrigger value="area">Area Size</TabsTrigger>
-      </TabsList>
-      <TabsContent value="popular">
-        <Card>
-          {/* <CardHeader>
-            <CardTitle>Account</CardTitle>
-            <CardDescription>
-              Make changes to your account here. Click save when you're done.
-            </CardDescription>
-          </CardHeader> */}
-          <CardContent className="space-y-2">
-            <div>
-              <div>
-                250 sq yard
-              </div>
+    <Card className={cn("w-[450px]")}>
+      <AspectRatio ratio={16 / 9}>
+        <CardHeader>
+          <CardTitle>
+            <div className="flex items-center gap-4">
+              <div className="text-green-700">{icon}</div>
+              {title}
             </div>
-          </CardContent>
-          <CardFooter>
-            {/* <Button>Save changes</Button> */}
-          </CardFooter>
-        </Card>
-      </TabsContent>
-      <TabsContent value="type">
-        <Card>
-          <CardHeader>
-            <CardTitle>Password</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, you'll be logged out.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="current">Current password</Label>
-              <Input id="current" type="password" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="new">New password</Label>
-              <Input id="new" type="password" />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save password</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-      <TabsContent value="area">
-        <Card>
-          <CardHeader>
-            <CardTitle>Password</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, you'll be logged out.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="current">Current password</Label>
-              <Input id="current" type="password" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="new">New password</Label>
-              <Input id="new" type="password" />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save password</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-    </Tabs>
-  )
+          </CardTitle>
+        </CardHeader>
+        <Tabs defaultValue="popular" className="w-[400px] mx-10">
+          <TabsList className="grid w-full grid-cols-3">
+            <TabsTrigger value="popular">Popular</TabsTrigger>
+            <TabsTrigger value="type">Type</TabsTrigger>
+            <TabsTrigger value="area">Area Size</TabsTrigger>
+          </TabsList>
+          <TabsContent value="popular">
+            <Carousel
+              opts={{
+                align: "start",
+              }}
+              className="w-full max-w-sm"
+            >
+              <CarouselContent>
+                {Array.from({ length: 6 }).map((_, index) => (
+                  <CarouselItem key={index}>
+                    <div className="p-1">
+                      {/* <Card>
+                        <CardContent className="flex aspect-square items-center justify-center p-6">
+                        
+                        </CardContent>
+                      </Card> */}
+                      <div className="grid w-full grid-cols-3 gap-3">
+                        {popular.map((item) => (
+                          <Card>
+                            <div>{item.title}</div>
+                            <div className="text-gray-500">
+                              {item.description}
+                            </div>
+                          </Card>
+                        ))}
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </TabsContent>
+          <TabsContent value="type">
+            <Carousel
+              opts={{
+                align: "start",
+              }}
+              className="w-full max-w-sm"
+            >
+              <CarouselContent>
+                {Array.from({ length: 6 }).map((_, index) => (
+                  <CarouselItem key={index}>
+                    <div className="p-1">
+                      {/* <Card>
+                        <CardContent className="flex aspect-square items-center justify-center p-6">
+                        
+                        </CardContent>
+                      </Card> */}
+                      <div className="grid w-full grid-cols-3 gap-3">
+                        {popular.map((item) => (
+                          <Card>
+                            <div>{item.title}</div>
+                            <div className="text-gray-500">
+                              {item.description}
+                            </div>
+                          </Card>
+                        ))}
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </TabsContent>
+          <TabsContent value="area">
+            <Carousel
+              opts={{
+                align: "start",
+              }}
+              className="w-full max-w-sm"
+            >
+              <CarouselContent>
+                {Array.from({ length: 6 }).map((_, index) => (
+                  <CarouselItem key={index}>
+                    <div className="p-1">
+                      {/* <Card>
+                        <CardContent className="flex aspect-square items-center justify-center p-6">
+                        
+                        </CardContent>
+                      </Card> */}
+                      <div className="grid w-full grid-cols-3 gap-3">
+                        {popular.map((item) => (
+                          <Card>
+                            <div>{item.title}</div>
+                            <div className="text-gray-500">
+                              {item.description}
+                            </div>
+                          </Card>
+                        ))}
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </TabsContent>
+        </Tabs>
+      </AspectRatio>
+    </Card>
+  );
 }

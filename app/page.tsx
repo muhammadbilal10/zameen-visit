@@ -5,11 +5,24 @@ import React, { lazy, Suspense } from "react";
 const Nav = lazy(() => import("@/components/NavBar"));
 const ImageCard = lazy(() => import("@/components/ImageCard"));
 const PropertyCard = lazy(() => import("@/components/PropertyCard"));
-const InteractiveCard = lazy(
-  () => import("@/components/InteractiveCard")
-);
+const InteractiveCard = lazy(() => import("@/components/InteractiveCard"));
+import { LandPlot, HomeIcon, MapPin } from "lucide-react";
 
 export default function Home() {
+  const propteries = [
+    {
+      title: "Home",
+      icon: <HomeIcon />,
+    },
+    {
+      title: "Plots",
+      icon: <MapPin />,
+    },
+    {
+      title: "Commercial",
+      icon: <LandPlot />,
+    },
+  ];
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
@@ -53,11 +66,15 @@ export default function Home() {
         <InteractiveCard />
       </Box>
 
-      <div>
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-        The Joke Tax Chronicles
-      </h1>
-      <PropertiesCard />
+      <div className="px-10 py-10">
+        <h1 className="scroll-m-20 text-xl font-bold tracking-tight lg:text-3xl pb-4">
+          Browse Properties
+        </h1>
+        <div className="grid lg:grid-cols-3 ">
+          {propteries.map((item) => (
+            <PropertiesCard title={item.title} icon={item.icon} />
+          ))}
+        </div>
       </div>
     </>
   );
