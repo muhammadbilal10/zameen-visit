@@ -6,6 +6,7 @@ const Nav = lazy(() => import("@/components/NavBar"));
 const ImageCard = lazy(() => import("@/components/ImageCard"));
 const PropertyCard = lazy(() => import("@/components/PropertyCard"));
 const InteractiveCard = lazy(() => import("@/components/InteractiveCard"));
+const Footer =lazy(()=> import ("@/components/Footer/Footer"));
 import { LandPlot, HomeIcon, MapPin } from "lucide-react";
 
 export default function Home() {
@@ -76,6 +77,7 @@ export default function Home() {
           ))}
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
