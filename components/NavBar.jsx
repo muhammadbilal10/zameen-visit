@@ -20,7 +20,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ClosIcon from '@mui/icons-material/Close';
 // pl={{xl:'30%',lg:'25%',md:'10%'}}
 const txtcolor = '#000000';
-function Nav() {
+function NavBar() {
     const isMobileView = useMediaQuery('(max-width: 480px)');
     const isTabletView = useMediaQuery('(max-width: 768px)');
     const mobileViewMinWidth = useMediaQuery('(min-width: 480px)');
@@ -161,4 +161,4 @@ function Nav() {
     );
 }
 
-export default Nav;
+export default NavBar;
