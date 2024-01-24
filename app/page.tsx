@@ -6,8 +6,10 @@ const Nav = lazy(() => import("@/components/NavBar"));
 const ImageCard = lazy(() => import("@/components/ImageCard"));
 const PropertyCard = lazy(() => import("@/components/PropertyCard"));
 const InteractiveCard = lazy(() => import("@/components/InteractiveCard"));
-const Footer =lazy(()=> import ("@/components/Footer/Footer"));
+// const Footer =lazy(()=> import ("@/components/Footer"));
 import { LandPlot, HomeIcon, MapPin } from "lucide-react";
+import Footer from "@/components/Footer/Footer";
+import PopularLocations from "@/components/PopularLocation";
 
 export default function Home() {
   const propteries = [
@@ -72,12 +74,19 @@ export default function Home() {
           Browse Properties
         </h1>
         <div className="grid lg:grid-cols-3 ">
-          {propteries.map((item) => (
-            <PropertiesCard title={item.title} icon={item.icon} />
+          {propteries.map((item, index) => (
+            <PropertiesCard key={index} title={item.title} icon={item.icon} />
           ))}
         </div>
       </div>
-      <Footer/>
+      <div className="px-10 py-10">
+      <h1 className="scroll-m-20 text-xl font-bold tracking-tight lg:text-3xl">
+         Popular Locations
+        </h1>
+        <PopularLocations />
+      </div>
+      
+      <Footer />
     </>
   );
 }

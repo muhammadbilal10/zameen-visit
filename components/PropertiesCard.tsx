@@ -141,8 +141,8 @@ export function PropertiesCard({ title, icon }: PropertiesCardProps) {
                         </CardContent>
                       </Card> */}
                       <div className="grid w-full grid-cols-3 gap-3">
-                        {popular.map((item) => (
-                          <Card>
+                        {popular.map((item,index) => (
+                          <Card key={index} className="p-1 flex flex-col items-center">
                             <div>{item.title}</div>
                             <div className="text-gray-500">
                               {item.description}
@@ -175,8 +175,8 @@ export function PropertiesCard({ title, icon }: PropertiesCardProps) {
                         </CardContent>
                       </Card> */}
                       <div className="grid w-full grid-cols-3 gap-3">
-                        {popular.map((item) => (
-                          <Card>
+                        {popular.map((item, index) => (
+                          <Card key={index} className="p-1 flex flex-col items-center">
                             <div>{item.title}</div>
                             <div className="text-gray-500">
                               {item.description}
@@ -209,8 +209,8 @@ export function PropertiesCard({ title, icon }: PropertiesCardProps) {
                         </CardContent>
                       </Card> */}
                       <div className="grid w-full grid-cols-3 gap-3">
-                        {popular.map((item) => (
-                          <Card>
+                        {popular.map((item, index) => (
+                          <Card key={index} className="p-1 flex flex-col items-center">
                             <div>{item.title}</div>
                             <div className="text-gray-500">
                               {item.description}
