@@ -10,6 +10,7 @@ const InteractiveCard = lazy(() => import("@/components/InteractiveCard"));
 import { LandPlot, HomeIcon, MapPin } from "lucide-react";
 import Footer from "@/components/Footer/Footer";
 import PopularLocations from "@/components/PopularLocation";
+import FAQCard from "@/components/FAQCard";
 
 export default function Home() {
   const propteries = [
@@ -36,7 +37,7 @@ export default function Home() {
           <Suspense fallback={<div>Loading...</div>}>
             <ImageCard
               imageUrl={
-                "https://images.pexels.com/photos/277667/pexels-photo-277667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "https://images.unsplash.com/photo-1560840067-ddcaeb7831d2?q=80&w=1979&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
             />
           </Suspense>
@@ -85,6 +86,14 @@ export default function Home() {
         </h1>
         <PopularLocations />
       </div>
+      <div style={{  display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',}}>
+  <FAQCard />
+</div>
+
+
+     
       
       <Footer />
     </>

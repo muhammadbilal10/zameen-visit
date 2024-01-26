@@ -26,7 +26,7 @@ export default function InteractiveCard() {
       </AspectRatio>
       <CardContent>
         <Typography level="title-lg" id="card-description">
-        Leads Estates
+        Agencies
         </Typography>
         <Typography level="body-sm" aria-describedby="card-description" mb={1}>
           <Link

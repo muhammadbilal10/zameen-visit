@@ -55,7 +55,7 @@ function ImageCard({ imageUrl }) {
 
             <Box sx={themeStyle.searchBoxDesign}>
 
-                <Typography color={'white'} mt={20} ml={'auto'} mr={'auto'} variant="h1" fontSize={{lg:37,md:34,sm:25,xs:20}} fontWeight={700} style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+                <Typography fontFamily={'sohne, "Helvetica Neue", Helvetica, Arial, sans-serif'} color={'white'} mt={20} ml={'auto'} mr={'auto'} variant="h1" fontSize={{lg:37,md:34,sm:25,xs:20}} fontWeight={700} style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
                     Let's Search Properties for Sale in Pakistan
                 </Typography>
 

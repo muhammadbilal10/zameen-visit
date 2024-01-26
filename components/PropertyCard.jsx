@@ -15,7 +15,7 @@ export default function DetailedCard() {
       <CardOverflow>
         <AspectRatio sx={{ minWidth: 200 }}>
           <img
-            src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=600"
+            src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             srcSet="https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286&dpr=2 2x"
             loading="lazy"
             alt=""
@@ -32,7 +32,7 @@ export default function DetailedCard() {
           overlay
           endDecorator={<ArrowOutwardIcon />}
         >
-          The Mega Mall & Residency, Karachi
+        ZameenVisit Projects
         </Link>
 
         <Typography

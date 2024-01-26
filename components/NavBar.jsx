@@ -15,9 +15,10 @@ import {
     Paper,
 } from '@mui/material';
 
-
+import { AspectRatio } from "@/components/ui/aspect-ratio"
 import MenuIcon from '@mui/icons-material/Menu';
 import ClosIcon from '@mui/icons-material/Close';
+import Image from 'next/image';
 // pl={{xl:'30%',lg:'25%',md:'10%'}}
 const txtcolor = '#000000';
 function NavBar() {
@@ -64,9 +65,11 @@ function NavBar() {
     )
     return (
         <div style={{ minWidth: '700px' }}>
-            <AppBar sx={{ background: '#FFFFFF', boxShadow: 'none', padding: '15px', borderBottom: 'none',
-          boxShadow:
-          "0px -1px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 2px 0px rgba(0,0,0,0.01)", }}>
+            <AppBar sx={{
+                background: '#FFFFFF', boxShadow: 'none', padding: '15px', borderBottom: 'none',
+                boxShadow:
+                    "0px -1px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 2px 0px rgba(0,0,0,0.01)",
+            }}>
 
                 <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', }}>
 
@@ -77,19 +80,19 @@ function NavBar() {
                         <>
                             {/* <div style={{ flexGrow: 1 }}></div> */}
                             <Box style={{ display: 'flex', marginRight: 'auto', }}>
-                                <Typography fontFamily={'Montserrat'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 16, xl: 16, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
+                                <Typography fontFamily={'sohne, "Helvetica Neue", Helvetica, Arial, sans-serif'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 18, xl: 18, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
                                     <a href="/services" style={{ textDecoration: 'none', color: txtcolor }}>Home</a>
                                 </Typography>
-                                <Typography fontFamily={'Montserrat'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 16, xl: 16, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
+                                <Typography fontFamily={'sohne, "Helvetica Neue", Helvetica, Arial, sans-serif'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 18, xl: 18, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
                                     <a href="/industries" style={{ textDecoration: 'none', color: txtcolor }}>Buy</a>
                                 </Typography>
-                                <Typography fontFamily={'Montserrat'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 16, xl: 16, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
+                                <Typography fontFamily={'sohne, "Helvetica Neue", Helvetica, Arial, sans-serif'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 18, xl: 18, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
                                     <a href="/contact" style={{ textDecoration: 'none', color: txtcolor }}>Plot</a>
                                 </Typography>
-                                <Typography fontFamily={'Montserrat'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 16, xl: 16, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
+                                <Typography fontFamily={'sohne, "Helvetica Neue", Helvetica, Arial, sans-serif'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 18, xl: 18, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
                                     <a href="/portfolio" style={{ textDecoration: 'none', color: txtcolor }}>Rent</a>
                                 </Typography>
-                                <Typography fontFamily={'Montserrat'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 16, xl: 16, }} padding={{ xl: '0 100px 0 15px', lg: '0 15px 0 25px', md: '0 10px', sm: '0 10px' }}>
+                                <Typography fontFamily={'sohne, "Helvetica Neue", Helvetica, Arial, sans-serif'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 18, xl: 18, }} padding={{ xl: '0 100px 0 15px', lg: '0 15px 0 25px', md: '0 10px', sm: '0 10px' }}>
                                     <a href="/Company" style={{ textDecoration: 'none', color: txtcolor }}>Company</a>
                                 </Typography>
 
@@ -97,27 +100,40 @@ function NavBar() {
                             {/* <div style={{marginRight:'3%'}}>
                             <CustomeButton text="Contact Us"  />
                             </div> */}
-                            <img
-                                src={"https://i.postimg.cc/nhKK59nL/Logo.png"}
-                                width={isTabletView ? "75px" : ""}
-                                height={isTabletView ? "75px" : ""}
+                            <div className="w-[0px]" style={{ width: isTabletView ? 50 : 60, height: isTabletView ? 50 : 60 }}>
+                                <AspectRatio ratio={16 / 9}>
+                                    <Image
+                                        src="https://i.postimg.cc/1tqd7jVq/LOGO-removebg-preview.png"
+                                        width={isTabletView ? 50 : 60}
+                                        height={isTabletView ? 50 : 60}
+                                        alt="Image"
+                                        className="rounded-md object-cover"
+                                    />
+                                </AspectRatio>
+                            </div>
+
+
+                            {/* <Image
+                                src={"https://i.postimg.cc/yYrPMTh6/LOGO.jpg"}
+                                width={isTabletView ? 75 : 60}
+                                height={isTabletView ? 75 : 80}
                                 alt="Logo"
                                 style={{ marginLeft: isTabletView ? "0px" : "25px" }}
-                            />
-                               <Box style={{ display: 'flex', marginLeft: 'auto', }}>
-                                <Typography fontFamily={'Montserrat'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 16, xl: 16, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
+                            /> */}
+                            <Box style={{ display: 'flex', marginLeft: 'auto', }}>
+                                <Typography fontFamily={'sohne, "Helvetica Neue", Helvetica, Arial, sans-serif'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 18, xl: 18, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
                                     <a href="/services" style={{ textDecoration: 'none', color: txtcolor }}>New Project</a>
                                 </Typography>
-                                <Typography fontFamily={'Montserrat'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 16, xl: 16, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
+                                <Typography fontFamily={'sohne, "Helvetica Neue", Helvetica, Arial, sans-serif'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 18, xl: 18, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
                                     <a href="/industries" style={{ textDecoration: 'none', color: txtcolor }}>Plot Finder</a>
                                 </Typography>
-                                <Typography fontFamily={'Montserrat'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 16, xl: 16, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
+                                <Typography fontFamily={'sohne, "Helvetica Neue", Helvetica, Arial, sans-serif'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 18, xl: 18, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
                                     <a href="/contact" style={{ textDecoration: 'none', color: txtcolor }}>Maps</a>
                                 </Typography>
-                                <Typography fontFamily={'Montserrat'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 16, xl: 16, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
+                                <Typography fontFamily={'sohne, "Helvetica Neue", Helvetica, Arial, sans-serif'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 18, xl: 18, }} padding={{ xl: '0 15px', lg: '0 15px', md: '0 10px', sm: '0 10px' }}>
                                     <a href="/portfolio" style={{ textDecoration: 'none', color: txtcolor }}>Portfolio</a>
                                 </Typography>
-                                <Typography fontFamily={'Montserrat'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 16, xl: 16, }} padding={{ xl: '0 100px 0 15px', lg: '0 15px 0 25px', md: '0 10px', sm: '0 10px' }}>
+                                <Typography fontFamily={'sohne, "Helvetica Neue", Helvetica, Arial, sans-serif'} fontWeight={500} fontSize={{ sm: 11, md: 16, lg: 18, xl: 18, }} padding={{ xl: '0 100px 0 15px', lg: '0 15px 0 25px', md: '0 10px', sm: '0 10px' }}>
                                     <a href="/Company" style={{ textDecoration: 'none', color: txtcolor }}>More</a>
                                 </Typography>
 
